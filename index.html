@@ -52,7 +52,11 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <h2>6 декабря, 2025</h2>
+ <div class="holiday-greeting">
+  🎄 С Новым 2026 годом! 🎅<br>
+  Пусть исполняются мечты, а код всегда работает с первого запуска!
+</div> 
+   <h2>6 декабря, 2025</h2>
   <img src="Icons/icons8-new-year-100.png" alt="Иконка">
   Поздравление с Наступающим 2026 годом читайте <a href="Congratulations2026.html">здесь.</a>
 
@@ -81,6 +85,34 @@
 <a target="_blank" href="https://icons8.com/icon/Te05gF2gRJfm/christmas-gift">New Year</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a>
   </p>
 
+<script>
+  function createSnowflakes() {
+    const snowContainer = document.body;
+    const snowflakes = ['❄', '❅', '❆'];
+    
+    for (let i = 0; i < 50; i++) {
+      const snow = document.createElement('div');
+      snow.innerHTML = snowflakes[Math.floor(Math.random() * snowflakes.length)];
+      snow.classList.add('snowflake');
+      
+      // Случайная позиция по горизонтали
+      snow.style.left = Math.random() * 100 + 'vw';
+      // Случайный размер
+      const size = Math.random() * 20 + 10;
+      snow.style.fontSize = size + 'px';
+      // Случайная длительность падения (от 5 до 15 сек)
+      snow.style.animationDuration = (Math.random() * 10 + 5) + 's';
+      
+      snowContainer.appendChild(snow);
+      
+      // Удаляем снежинку после анимации, чтобы не нагружать DOM
+      setTimeout(() => snow.remove(), 15000);
+    }
+  }
 
+  // Запускаем каждые 15 секунд новые снежинки
+  createSnowflakes();
+  setInterval(createSnowflakes, 15000);
+</script>
 </body>
 </html>
