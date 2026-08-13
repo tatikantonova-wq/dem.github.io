@@ -3,50 +3,7 @@
 <head>
   <style>
   body {
-    background: linear-gradient(135deg, #0c2e4a, #1a5f23); /* Тёмно-синий + тёмно-зелёный — новогодние цвета */
-    color: #f0f8ff; /* Почти белый текст */
-    font-family: 'Arial', sans-serif;
-    margin: 0;
-    padding: 20px;
-    min-height: 100vh;
-    position: relative;
-    overflow-x: hidden;
-  }
-
-  h2 {
-    color: #ffd700; /* Золотой заголовок */
-    text-shadow: 0 0 10px rgba(255, 215, 0, 0.6);
-  }
-
-  a {
-    color: #ffcc00;
-    text-decoration: underline;
-  }
-
-  .snowflake {
-    position: absolute;
-    top: -20px;
-    color: #fff;
-    font-size: 24px;
-    user-select: none;
-    pointer-events: none;
-    z-index: 1000;
-    animation: fall linear forwards;
-  }
-
-  @keyframes fall {
-    to {
-      transform: translateY(105vh) rotate(360deg);
-    }
-  }
-
-  .holiday-greeting {
-    text-align: center;
-    margin: 30px 0;
-    font-size: 1.4em;
-    color: #ffd700;
-    text-shadow: 0 0 8px rgba(255, 215, 0, 0.8);
-  }
+    
 </style>
   <meta charset="UTF-8">
   <title>Мой блог</title>
@@ -426,50 +383,243 @@ p {
 <div class="autumn-greeting">
     🍁 Золотая осень! 🍂<br>
     Пусть этот сезон принесёт вдохновение и тёплые дни!
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<style>
+body {
+    background: linear-gradient(135deg, #3e1f00, #8B4513, #D2691E);
+    /* Тёмно-коричневый → шоколадный → тёплый оранжево-коричневый */
+    color: #FFF8DC; /* Кремовый текст */
+    font-family: 'Georgia', serif;
+    margin: 0;
+    padding: 20px;
+    min-height: 100vh;
+    position: relative;
+    overflow-x: hidden;
+}
+
+h1 {
+    color: #FFD700;
+    text-shadow: 0 0 10px rgba(255, 165, 0, 0.7);
+    border-bottom: 2px solid #DAA520;
+    padding-bottom: 10px;
+}
+
+h2 {
+    color: #FF8C00; /* Тёмно-оранжевый заголовок */
+    text-shadow: 0 0 10px rgba(255, 140, 0, 0.6);
+    border-left: 4px solid #FF6347;
+    padding-left: 12px;
+    margin-top: 30px;
+}
+
+a {
+    color: #FFD700;
+    text-decoration: underline;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: #FF4500;
+    text-shadow: 0 0 8px rgba(255, 69, 0, 0.8);
+}
+
+blockquote {
+    border-left: 4px solid #DAA520;
+    margin: 15px 0;
+    padding: 10px 20px;
+    background: rgba(139, 69, 19, 0.3);
+    border-radius: 5px;
+    font-style: italic;
+    color: #FFE4B5;
+}
+
+blockquote.q {
+    border-left-color: #FF6347;
+}
+
+.autumn-greeting {
+    text-align: center;
+    margin: 30px 0;
+    font-size: 1.4em;
+    color: #FFD700;
+    text-shadow: 0 0 8px rgba(255, 215, 0, 0.8);
+    background: rgba(139, 69, 19, 0.4);
+    padding: 20px;
+    border-radius: 10px;
+    border: 2px solid #DAA520;
+}
+
+.falling-leaf {
+    position: fixed;
+    top: -30px;
+    font-size: 24px;
+    user-select: none;
+    pointer-events: none;
+    z-index: 1000;
+    animation: fall linear forwards;
+    opacity: 0.8;
+}
+
+@keyframes fall {
+    0% {
+        transform: translateY(-10vh) rotate(0deg) translateX(0px);
+        opacity: 0.9;
+    }
+    25% {
+        transform: translateY(25vh) rotate(90deg) translateX(30px);
+    }
+    50% {
+        transform: translateY(50vh) rotate(180deg) translateX(-20px);
+    }
+    75% {
+        transform: translateY(75vh) rotate(270deg) translateX(25px);
+    }
+    100% {
+        transform: translateY(105vh) rotate(360deg) translateX(-10px);
+        opacity: 0.3;
+    }
+}
+
+.section {
+    background: rgba(62, 31, 0, 0.5);
+    border: 1px solid #DAA520;
+    border-radius: 10px;
+    padding: 20px;
+    margin: 20px 0;
+}
+
+.keys {
+    background: rgba(218, 165, 32, 0.15);
+    padding: 15px;
+    border-radius: 8px;
+    margin: 10px 0;
+    border: 1px dashed #DAA520;
+}
+
+code {
+    background: rgba(0, 0, 0, 0.3);
+    padding: 3px 8px;
+    border-radius: 4px;
+    color: #FFD700;
+    font-family: 'Courier New', monospace;
+}
+
+button {
+    background: linear-gradient(135deg, #D2691E, #FF8C00);
+    color: #FFF8DC;
+    border: 2px solid #DAA520;
+    padding: 10px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1em;
+    margin: 5px;
+    transition: all 0.3s ease;
+}
+
+button:hover {
+    background: linear-gradient(135deg, #FF8C00, #FF6347);
+    transform: scale(1.05);
+    box-shadow: 0 4px 15px rgba(255, 140, 0, 0.5);
+}
+
+input[type="number"] {
+    background: rgba(0, 0, 0, 0.3);
+    border: 2px solid #DAA520;
+    color: #FFF8DC;
+    padding: 8px 12px;
+    border-radius: 5px;
+    font-size: 1em;
+    margin: 5px 0;
+}
+
+.result {
+    margin-top: 15px;
+    padding: 12px;
+    background: rgba(139, 69, 19, 0.4);
+    border-radius: 8px;
+    border: 1px solid #DAA520;
+    min-height: 20px;
+    color: #FFD700;
+    font-weight: bold;
+}
+
+.note {
+    color: #FFE4B5;
+    font-size: 0.9em;
+    margin-top: 10px;
+}
+
+.date {
+    color: #FF8C00;
+    font-weight: bold;
+    font-size: 0.9em;
+}
+
+img {
+    border: 3px solid #DAA520;
+    border-radius: 8px;
+    max-width: 100%;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+video {
+    border: 3px solid #DAA520;
+    border-radius: 8px;
+    max-width: 100%;
+}
+
+p {
+    line-height: 1.7;
+    margin: 10px 0;
+}
+
+/* Декоративные уголки */
+.entry {
+    background: rgba(62, 31, 0, 0.3);
+    padding: 15px;
+    border-radius: 8px;
+    border-left: 4px solid #FF6347;
+    margin: 10px 0;
+}
+</style>
+<meta charset="UTF-8">
+<title>Мой блог</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="autumn-greeting">
+    🍁 Золотая осень! 🍂<br>
+    Пусть этот сезон принесёт вдохновение и тёплые дни!
 </div>
+function createFallingLeaves() {
+    const leafContainer = document.body;
+    const leaves = ['🍂', '🍁', '🍃', '🍂', '🍁'];
+    for (let i = 0; i < 30; i++) {
+        const leaf = document.createElement('div');
+        leaf.innerHTML = leaves[Math.floor(Math.random() * leaves.length)];
+        leaf.classList.add('falling-leaf');
+        // Случайная позиция по горизонтали
+        leaf.style.left = Math.random() * 100 + 'vw';
+        // Случайный размер
+        const size = Math.random() * 20 + 15;
+        leaf.style.fontSize = size + 'px';
+        // Случайная длительность падения (от 8 до 18 сек)
+        leaf.style.animationDuration = (Math.random() * 10 + 8) + 's';
+        // Задержка запуска для разнообразия
+        leaf.style.animationDelay = (Math.random() * 5) + 's';
+        leafContainer.appendChild(leaf);
+        // Удаляем листик после анимации, чтобы не нагружать DOM
+        setTimeout(() => leaf.remove(), 20000);
+    }
+}
+// Запускаем каждые 20 секунд новые листья
+createFallingLeaves();
+setInterval(createFallingLeaves, 20000);
+</script>
 
-<h2>6 декабря, 2025</h2>
-<img src="Icons/icons8-new-year-100.png" alt="Иконка">
-Поздравление с Наступающим 2026 годом читайте <a href="Congratulations2026.html">здесь.</a>
+</body>
+</html>
 
-<h2>15 октября, 2025</h2>
-<p>
-Я сделала Новогодние кроссворды для сайта
-<a href="https://forge-code1.github.io/dem.github.io/" title="Блог моего друга">Сайт моего друга</a>.
-</p>
-<blockquote>Путешествие в тысячу миль начинается с одного шага (Лао Цзы)</blockquote>
-<blockquote class="q">Оставляю в прошлом скучную неинтересную локальную файловую систему ради Всемирной паутины.</blockquote>
-
-<h2>19 декабря, 2025</h2>
-<div class="entry">
-<div class="date">19 декабря, 2025</div>
-<p>Поздравляю с наступающим 2026! 🎄</p>
-</div>
-Поздравляю с наступающим 2026 <a href="Kolyadka2.odt"> здесь.</a><br>
-<p>Поздравление с Рождеством
-<video src="newTree.mp4" controls>
-Ваш браузер не поддерживает тег video.
-</video>
-</p>
-
-<h2> 13 января, 2026</h2>
-<a href="https://tatikantonova-wq.github.io/dem.github.io/index.html" title="Домен">Домен моего сайта</a>
-<p>Рабочая почта: <a href="mailto:Tatik.antonova@gmail.com">Tatik.antonova@gmail.com</a></p>
-
-<h2>16 января, 2026</h2>
-<p>а. АПЕЛЬСИН – САЦЬНВЩЮ, ключ шифра Цезаря-15</p>
-<p>б. АБРИКОС – ЫЬЛГЕЙМ. ключ шифра Цезаря-5</p>
-<p>а. ФХНЗКЧ-привет. ключ Цезаря -27</p>
-<p>б. ЦЩЕБФ.\- весна. ключ Цезаря-12</p>
-<p>Антонова-КЧЬШЧШМК. ключ Цезаря-10</p>
-
-<h2> 21 января, 2026</h2>
-<h1>Учебный RSA-шифр (p = 17, q = 19)</h1>
-<div class="section">
-<h2>Параметры алгоритма</h2>
-<p><strong>p = 17</strong>, <strong>q = 19</strong> — простые числа</p>
-<p><strong>n = p × q = 17 × 19 = 323</strong></p>
-<p><strong>φ(n) = (p−1)(q−1) = 16 × 18 = 288</strong></p>
-<p><strong>e = 5</strong> — открытая экспонента (НОД(5, 288) = 1)</p>
-<p><strong>d = 173</strong> — закрытая экспонента (5 × 173 mod 288 = 1
- </html>
